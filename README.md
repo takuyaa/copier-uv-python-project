@@ -28,7 +28,7 @@ For alternative installation methods, see [copier's offical documentation](https
 To create a new project, run:
 
 ```shell
-copier copy --trust gh:takuyaa/copier-uv-python-template /path/to/your-project
+copier copy --trust gh:takuyaa/copier-uv-python-project /path/to/your-project
 ```
 
 Note: The `--trust` option is required for installing dependencies after project generation.
