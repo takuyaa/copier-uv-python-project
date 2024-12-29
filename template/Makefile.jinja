@@ -1,0 +1,25 @@
+SHELL := env PYTHON_VERSION={{ python_version }} /bin/bash
+PYTHON_VERSION ?= {{ python_version }}
+.SILENT: run devinstall install test lint format
+
+install:
+	uv sync --frozen --no-dev
+
+devinstall:
+	uv sync --frozen
+
+test:
+	uv run pytest
+
+lint:
+	echo "Running ruff..."
+	uv run ruff check
+	echo "Running mypy..."
+	uv run mypy .
+
+format:
+	uv run ruff format
+
+run:
+# uv run src/{{ package_name }}/cli.py
+	uv run python -m src.{{ package_name }}

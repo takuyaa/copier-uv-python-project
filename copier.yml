@@ -1,0 +1,30 @@
+project_name:
+  type: str
+  help: Name of your Python project.
+package_name:
+  type: str
+  help: |
+    Name of the Python package. Must be a valid Python identifier.
+  validator: >-
+    {% if not (package_name | regex_search('^[a-zA-Z][a-zA-Z_0-9]+$')) %} {{package_name}} is not a valid Python package name. {% endif %}
+author_name:
+  type: str
+  help: Your full name.
+  placeholder: First Last
+author_email:
+  type: str
+  help: Your email address.
+  placeholder: you@example.com
+  validator: >-
+    {% if not (author_email | regex_search('^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$')) %} {{author_email}} is not a valid email address. {% endif %}
+python_version:
+  type: str
+  help: Python version.
+  default: "3.12"
+description:
+  type: str
+  help: Project description.
+_subdirectory: template
+_tasks:
+  - uv python pin {{ python_version }}
+  - uv add pytest ruff mypy --dev
