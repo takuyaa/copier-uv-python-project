@@ -14,8 +14,8 @@ test:
 lint:
 	echo "Running ruff..."
 	uv run ruff check
-	echo "Running mypy..."
-	uv run mypy .
+	echo "Running pyright..."
+	uv run pyright
 
 format:
 	uv run ruff format

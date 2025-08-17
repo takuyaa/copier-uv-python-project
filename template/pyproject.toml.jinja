@@ -38,3 +38,16 @@ select = [
     "N",    # naming
     "T100", # breakpoints (probably don't want these in prod!)
 ]
+
+[tool.pyright]
+include = ["src", "tests"]
+exclude = [
+    "**/__pycache__",
+    ".venv",
+    "build",
+    "dist",
+]
+pythonVersion = "{{ python_version }}"
+typeCheckingMode = "strict"
+reportMissingImports = true
+reportMissingTypeStubs = false

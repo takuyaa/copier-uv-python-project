@@ -27,4 +27,4 @@ description:
 _subdirectory: template
 _tasks:
   - uv python pin {{ python_version }}
-  - uv add pytest ruff mypy --dev
+  - uv add pytest ruff pyright --dev
