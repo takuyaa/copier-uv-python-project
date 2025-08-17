@@ -25,10 +25,9 @@ ipython_config.py
 env/
 venv/
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# pyright / pylance
+.pyright/
+pyrightconfig.json
 
 # Ruff
 .ruff_cache/

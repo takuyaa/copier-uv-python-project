@@ -7,7 +7,7 @@ A [copier](https://github.com/copier-org/copier) template for generating Python 
 - [uv](https://docs.astral.sh/uv/)
 - [pytest](https://docs.pytest.org/)
 - [Ruff](https://docs.astral.sh/ruff/)
-- [mypy](https://www.mypy-lang.org/)
+- [pyright](https://github.com/microsoft/pyright)
 
 ## Prerequisites
 
